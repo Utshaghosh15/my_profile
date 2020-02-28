@@ -216,4 +216,4 @@ mongoose.connect(config.database,
 	               {console.log('Connected to MongoDB')
 	             });
 
-app.listen(port, () => console.log('Running at port 1234'));
+app.listen(port, () => console.log('Running at port 8080'));
