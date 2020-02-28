@@ -210,8 +210,7 @@ app.get('/searchprofile/:name', async (req,res) => {
 	}
 })
 
-mongoose.connect(config.database, 
-	              {useNewUrlParser: true, useUnifiedTopology: true },
+mongoose.connect(config.database,
 	              () => 
 	               {console.log('Connected to MongoDB')
 	             });
