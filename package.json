@@ -1,13 +1,19 @@
 {
   "name": "server",
   "version": "1.0.0",
+<<<<<<< HEAD
   "engines": {
     "node": "12.13.1",
     "npm": "6.12.1"
+=======
+    "engines": {
+    "node": "12.13.1"
+>>>>>>> 77bde83676afd5433936dd7d976cb32655c83e12
   },
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "utsha",
