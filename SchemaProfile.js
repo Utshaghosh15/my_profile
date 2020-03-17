@@ -4,6 +4,7 @@ const ProfileInfo = mongoose.Schema({
 	name: String,
     password: String,
 	status: String,
+	Description: String,
 	Contact: Number,
     Skills: [String],
     Experience: [{
@@ -17,7 +18,12 @@ const ProfileInfo = mongoose.Schema({
     	Ten: Number,
         Twelve: Number,
         Btech: Number
-    }
+    },
+    Project: [{
+        title: String,
+        Description: String,
+        URL: String
+    }]
 
 })
 

@@ -141,7 +141,7 @@ app.delete('/profile/deleteExperience/:user/:company', async (req,res) => {
 //Add Title & Status
 app.post('/EditTitle', async (req,res) => {
     try{
-       const AddPost = await ProfileInfo.updateOne({ name: req.body.name },{ $set: {status: req.body.status}});
+       const AddPost = await ProfileInfo.updateOne({ name: req.body.username },{ '$set': { 'status': req.body.Status, 'Description': req.body.Description}});
        res.json(AddPost);
   }
   catch(err){
@@ -182,6 +182,29 @@ app.post('/EditExperience', async (req,res) => {
     res.json(err);
   }
 
+})
+
+
+//Add Project
+app.post('/AddProject', async (req,res) => {
+      try{
+      const AddPost = await ProfileInfo.update({ name: req.body.name },{ $addToSet : { Project: { title: req.body.title, Description: req.body.Description, URL : req.body.URL} } });
+       res.json(AddPost);       
+  }
+  catch(err){
+    res.json(err);
+  }
+})
+
+//Delete Project
+app.delete('/profile/deleteProject/:name/:title', async (req,res) => {
+  try{
+       const removePost = await ProfileInfo.updateOne({ name: req.params.name },{ $pull: { Project: { title: req.params.title }}});
+       res.json(removePost);
+  }
+  catch(err){
+    res.json(err);
+  }
 })
 
 app.post('/searchprofile', async (req,res) => {
