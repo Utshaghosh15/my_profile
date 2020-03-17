@@ -571,36 +571,36 @@ var ProfileService = /** @class */ (function () {
         this.http = http;
     }
     ProfileService.prototype.GetProfile = function (uname) {
-        return this.http.get("profile/" + uname);
+        return this.http.get("/profile/" + uname);
     };
     ProfileService.prototype.Authenticate = function (username, password) {
-        return this.http.post("authenticate", {
+        return this.http.post("/authenticate", {
             username: username,
             password: password
         });
     };
     ProfileService.prototype.DeleteSkill = function (user, skill) {
-        return this.http.delete("profile/deleteSkill/" + user + "/" + skill);
+        return this.http.delete("/profile/deleteSkill/" + user + "/" + skill);
     };
     ProfileService.prototype.DeleteExperience = function (username, company) {
-        return this.http.delete("profile/deleteExperience/" + username + "/" + company);
+        return this.http.delete("/profile/deleteExperience/" + username + "/" + company);
     };
     ProfileService.prototype.SearchTrue = function (name) {
-        return this.http.post("searchprofile", {
+        return this.http.post("/searchprofile", {
             name: name
         });
     };
     ProfileService.prototype.AddSkill = function (name, skill) {
-        return this.http.get("profile/AddSkill/" + name + "/" + skill);
+        return this.http.get("/profile/AddSkill/" + name + "/" + skill);
     };
     ProfileService.prototype.AddStatus = function (name, status) {
-        return this.http.post('EditTitle', {
+        return this.http.post('/EditTitle', {
             name: name,
             status: status
         });
     };
     ProfileService.prototype.AddProject = function (name, title, Description, URL) {
-        return this.http.post('AddProject', {
+        return this.http.post('/AddProject', {
             name: name,
             title: title,
             Description: Description,
@@ -608,19 +608,19 @@ var ProfileService = /** @class */ (function () {
         });
     };
     ProfileService.prototype.DeleteProject = function (name, title) {
-        return this.http.delete("profile/deleteProject/" + name + "/" + title);
+        return this.http.delete("/profile/deleteProject/" + name + "/" + title);
     };
     ProfileService.prototype.SearchUser = function (name) {
-        return this.http.get("searchprofile/" + name);
+        return this.http.get("/searchprofile/" + name);
     };
     ProfileService.prototype.RegisterUser = function (username, password) {
-        return this.http.post('newuser', {
+        return this.http.post('/newuser', {
             username: username,
             password: password
         });
     };
     ProfileService.prototype.EditEducaton = function (Btech, Twelve, Ten, username) {
-        return this.http.post('EditEducation', {
+        return this.http.post('/EditEducation', {
             username: username,
             Btech: Btech,
             Twelve: Twelve,
@@ -628,7 +628,7 @@ var ProfileService = /** @class */ (function () {
         });
     };
     ProfileService.prototype.EditExperience = function (username, Role, company, location, from, to) {
-        return this.http.post('EditExperience', {
+        return this.http.post('/EditExperience', {
             username: username,
             Role: Role,
             company: company,
@@ -638,7 +638,7 @@ var ProfileService = /** @class */ (function () {
         });
     };
     ProfileService.prototype.EditTitle = function (username, Status, Description) {
-        return this.http.post('EditTitle', {
+        return this.http.post('/EditTitle', {
             username: username,
             Status: Status,
             Description: Description

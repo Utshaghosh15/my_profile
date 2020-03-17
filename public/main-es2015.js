@@ -555,36 +555,36 @@ let ProfileService = class ProfileService {
         this.http = http;
     }
     GetProfile(uname) {
-        return this.http.get(`profile/${uname}`);
+        return this.http.get(`/profile/${uname}`);
     }
     Authenticate(username, password) {
-        return this.http.post(`authenticate`, {
+        return this.http.post(`/authenticate`, {
             username,
             password
         });
     }
     DeleteSkill(user, skill) {
-        return this.http.delete(`profile/deleteSkill/${user}/${skill}`);
+        return this.http.delete(`/profile/deleteSkill/${user}/${skill}`);
     }
     DeleteExperience(username, company) {
-        return this.http.delete(`profile/deleteExperience/${username}/${company}`);
+        return this.http.delete(`/profile/deleteExperience/${username}/${company}`);
     }
     SearchTrue(name) {
-        return this.http.post(`searchprofile`, {
+        return this.http.post(`/searchprofile`, {
             name
         });
     }
     AddSkill(name, skill) {
-        return this.http.get(`profile/AddSkill/${name}/${skill}`);
+        return this.http.get(`/profile/AddSkill/${name}/${skill}`);
     }
     AddStatus(name, status) {
-        return this.http.post('EditTitle', {
+        return this.http.post('/EditTitle', {
             name,
             status
         });
     }
     AddProject(name, title, Description, URL) {
-        return this.http.post('AddProject', {
+        return this.http.post('/AddProject', {
             name,
             title,
             Description,
@@ -592,19 +592,19 @@ let ProfileService = class ProfileService {
         });
     }
     DeleteProject(name, title) {
-        return this.http.delete(`profile/deleteProject/${name}/${title}`);
+        return this.http.delete(`/profile/deleteProject/${name}/${title}`);
     }
     SearchUser(name) {
-        return this.http.get(`searchprofile/${name}`);
+        return this.http.get(`/searchprofile/${name}`);
     }
     RegisterUser(username, password) {
-        return this.http.post('newuser', {
+        return this.http.post('/newuser', {
             username,
             password
         });
     }
     EditEducaton(Btech, Twelve, Ten, username) {
-        return this.http.post('EditEducation', {
+        return this.http.post('/EditEducation', {
             username,
             Btech,
             Twelve,
@@ -612,7 +612,7 @@ let ProfileService = class ProfileService {
         });
     }
     EditExperience(username, Role, company, location, from, to) {
-        return this.http.post('EditExperience', {
+        return this.http.post('/EditExperience', {
             username,
             Role,
             company,
@@ -622,7 +622,7 @@ let ProfileService = class ProfileService {
         });
     }
     EditTitle(username, Status, Description) {
-        return this.http.post('EditTitle', {
+        return this.http.post('/EditTitle', {
             username,
             Status,
             Description
