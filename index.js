@@ -6,8 +6,10 @@ const ProfileInfo = require('./SchemaProfile');
 const bodyparse = require('body-parser');
 const app = express();
 const config = require('./config/database')
+const passport = require('passport');
+const bcrypt = require('bcrypt');
 const port = process.env.PORT || 8080;
-
+const jwt = require('jsonwebtoken');
 
 app.use(bodyparse.json());
 app.use(cors());
