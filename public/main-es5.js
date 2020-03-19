@@ -52,7 +52,7 @@ module.exports = "<app-navbar></app-navbar>\n<div id=\"bgc\">\n    <div id=\"log
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n\n  <div id=\"container\">\n <div id=\"divleft\">\n  <h1 id=\"websitename\" (click)=\"HomePage()\" style=\"cursor: pointer;\">MY PROFILE</h1>\n\n </div>\n <div id=\"divright\">\n  <button id=\"LogOut\" (click)=\"LoggingOut()\">LogOut</button>\n      <form (submit)=\"UpdateExperience($event)\" id=\"username\"> \n        <input type=\"text\" name=\"Company\" placeholder=\"Company\" id=\"Company\"><br><br>\n        <input type=\"text\" name=\"Role\" placeholder=\"Role\" id=\"Role\"><br><br>\n        <input type=\"text\" name=\"Locations\" placeholder=\"Locations\" id=\"Locations\"><br><br>\n        <input type=\"date\" name=\"dateOfBirth\" id=\"dateOfBirth1\"><br><br>\n        <input type=\"date\" name=\"dateOfBirth\" id=\"dateOfBirth2\" placeholder=\"From\"><br><br>\n        <input type=\"submit\" value=\"Save\" id=\"Save\">\n      </form>\n  </div>\n</div>\n\n   "
+module.exports = "\n\n  <div id=\"container\">\n <div id=\"divleft\">\n  <h1 id=\"websitename\" (click)=\"HomePage()\" style=\"cursor: pointer;\">MY PROFILE</h1>\n\n </div>\n <div id=\"divright\">\n  <button id=\"LogOut\" (click)=\"LoggingOut()\">LogOut</button>\n      <form (submit)=\"UpdateExperience($event)\" id=\"username\"> \n        <input type=\"text\" name=\"Company\" placeholder=\"Company\" id=\"Company\"><br><br>\n        <input type=\"text\" name=\"Role\" placeholder=\"Role\" id=\"Role\"><br><br>\n        <input type=\"text\" name=\"Locations\" placeholder=\"Locations\" id=\"Locations\"><br><br>\n        <textarea name=\"Description\" id=\"Description\" cols=\"52\" rows=\"5\" placeholder=\"Description\"></textarea><br><br>\n        <input type=\"date\" name=\"dateOfBirth\" id=\"dateOfBirth1\"><br><br>\n        <input type=\"date\" name=\"dateOfBirth\" id=\"dateOfBirth2\" placeholder=\"From\"><br><br>\n        <input type=\"submit\" value=\"Save\" id=\"Save\">\n      </form>\n  </div>\n</div>\n\n   "
 
 /***/ }),
 
@@ -74,7 +74,7 @@ module.exports = "<header id=\"sticky-header\" class=\"sticky\">\n    <div class
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"container\">\n <div id=\"divleft\">\n  <h1 id=\"websitename\">MY PROFILE</h1>\n  <!-- <h1 id=\"websitename\">MY PROFILE</h1><br> -->\n  <img src=\"../../assets/boy2.png\" alt=\"men\" id=\"profilepic\">\n </div>\n <div id=\"divright\">\n  <button id=\"LogOut\" (click)=\"LoggingOut()\">LogOut</button>\n  <h2 id=\"username\">{{UserProfile.name}}</h2>\n  <button id=\"Edit\" (click)=\"EditTitle(UserProfile.name)\">Edit</button>\n  <h3 id=\"status\">{{UserProfile.status}}</h3>\n  <h4 id=\"about\">{{UserProfile.Description}}</h4>\n    <div id=\"skill-contents\">\n      <h3 id=\"skill\">SKILLS</h3>\n      <button id=\"Edit\" (click)= \"AddSkills(UserProfile.name)\">Add</button><br><br>\n        <ul id=\"skill-list\">   \n          <li *ngFor = \"let skill of UserProfile.Skills\" id=\"skill-content\"><h4>{{skill}}</h4>\n            <button id=\"Delete\" (click)= \"deleteSkills(UserProfile.name,skill)\">Delete</button> \n          </li>  \n        </ul>\n    </div>\n     <div id=\"experience-contents\">\n      <h3 id=\"experience\">EXPERIENCE</h3>\n      <button id=\"Edit\" (click)=\"AddExperience(UserProfile.name)\">Add</button><br><br>\n      <ul id=\"exp\">\n        <li id=\"experience-content\" *ngFor = \"let exp of UserProfile.Experience\">\n          <h3 id=\"position\">{{exp.Role}}</h3>\n          <button id=\"Delete\" (click)= \"deleteExperience(UserProfile.name,exp.company)\">Delete</button>\n          <h4 id=\"company\">{{ exp.company }}, {{exp.Locations}}</h4>\n          <p id=\"date\">{{exp.from}} - {{exp.to}}</p>\n          <h4 id=\"job-decription\">Lorem ipsum dolor sit, amet consectetur adipisicing elit. \n            Molestias ullam quae architecto aspernatur debitis exercitationem consectetur, \n            quam quasi totam porro. Voluptate, at a saepe in ducimus harum fugiat ut amet.</h4> \n        </li>\n      </ul> \n    </div>\n    <div id=\"project-contents\">\n      <h3 id=\"project\">PROJECTS</h3>\n      <button id=\"Edit\" (click)=\"AddProject(UserProfile.name)\">Add</button><br><br>\n      <ul id=\"pro\">\n        <li id=\"project-content\" *ngFor = \"let project of UserProfile.Project\">\n          <h3 id=\"project-title\">{{project.title}}</h3> \n          <button id=\"Delete\" (click)=\"DeleteProject(UserProfile.name,project.title)\">Delete</button>\n          <h4 id=\"project-desc\">{{project.Description}}</h4>\n          <a id=\"project-link\" href=\"{{project.URL}}\" target=\"_blank\">{{project.URL}}</a>\n        </li>\n      </ul>\n    </div>\n </div>\n</div>\n"
+module.exports = "<div id=\"container\">\n <div id=\"divleft\">\n  <h1 id=\"websitename\">MY PROFILE</h1>\n  <!-- <h1 id=\"websitename\">MY PROFILE</h1><br> -->\n  <img src=\"../../assets/boy2.png\" alt=\"men\" id=\"profilepic\">\n </div>\n <div id=\"divright\">\n  <button id=\"LogOut\" (click)=\"LoggingOut()\">LogOut</button>\n  <h2 id=\"username\">{{UserProfile.name}}</h2>\n  <button id=\"Edit\" (click)=\"EditTitle(UserProfile.name)\">Edit</button>\n  <h3 id=\"status\">{{UserProfile.status}}</h3>\n  <h4 id=\"about\">{{UserProfile.Description}}</h4>\n    <div id=\"skill-contents\">\n      <h3 id=\"skill\">SKILLS</h3>\n      <button id=\"Edit\" (click)= \"AddSkills(UserProfile.name)\">Add</button><br><br>\n        <ul id=\"skill-list\">   \n          <li *ngFor = \"let skill of UserProfile.Skills\" id=\"skill-content\"><h4>{{skill}}</h4>\n            <button id=\"Delete\" (click)= \"deleteSkills(UserProfile.name,skill)\">Delete</button> \n          </li>  \n        </ul>\n    </div>\n     <div id=\"experience-contents\">\n      <h3 id=\"experience\">EXPERIENCE</h3>\n      <button id=\"Edit\" (click)=\"AddExperience(UserProfile.name)\">Add</button><br><br>\n      <ul id=\"exp\">\n        <li id=\"experience-content\" *ngFor = \"let exp of UserProfile.Experience\">\n          <h3 id=\"position\">{{exp.Role}}</h3>\n          <button id=\"Delete\" (click)= \"deleteExperience(UserProfile.name,exp.company)\">Delete</button>\n          <h4 id=\"company\">{{ exp.company }}, {{exp.Locations}}</h4>\n          <p id=\"date\">{{exp.from}} - {{exp.to}}</p>\n          <h4 id=\"job-decription\">{{exp.Description}}</h4> \n        </li>\n      </ul> \n    </div>\n    <div id=\"project-contents\">\n      <h3 id=\"project\">PROJECTS</h3>\n      <button id=\"Edit\" (click)=\"AddProject(UserProfile.name)\">Add</button><br><br>\n      <ul id=\"pro\">\n        <li id=\"project-content\" *ngFor = \"let project of UserProfile.Project\">\n          <h3 id=\"project-title\">{{project.title}}</h3> \n          <button id=\"Delete\" (click)=\"DeleteProject(UserProfile.name,project.title)\">Delete</button>\n          <h4 id=\"project-desc\">{{project.Description}}</h4>\n          <a id=\"project-link\" href=\"{{project.URL}}\" target=\"_blank\">{{project.URL}}</a>\n        </li>\n      </ul>\n    </div>\n </div>\n</div>\n"
 
 /***/ }),
 
@@ -129,7 +129,7 @@ module.exports = "<!-- <div class = \"mainpage\">\n    <div class=\"box\">\n    
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"container\">\n    <div id=\"divleft\">\n     <h1 id=\"websitename\">MY PROFILE</h1> \n    </div>\n    <div id=\"divright\">\n     <button id=\"LogOut\" (click)=\"LoggingOut()\">LogOut</button>\n         <form (submit)=\"UpdateTitle($event)\" id=\"username\"> \n           <input type=\"text\" name=\"Status\" placeholder=\"Status\" id=\"Status\"><br><br>\n           <textarea name=\"Description\" id=\"Description\" cols=\"52\" rows=\"5\" placeholder=\"Description\"></textarea><br><br>\n           <input type=\"submit\" value=\"Save\" id=\"Save\">\n         </form>\n     </div>\n   </div>\n"
+module.exports = "<div id=\"container\">\n    <div id=\"divleft\">\n     <h1 id=\"websitename\" (click)=\"HomePage()\" style=\"cursor: pointer;\">MY PROFILE</h1> \n    </div>\n    <div id=\"divright\">\n     <button id=\"LogOut\" (click)=\"LoggingOut()\">LogOut</button>\n         <form (submit)=\"UpdateTitle($event)\" id=\"username\"> \n           <input type=\"text\" name=\"Status\" placeholder=\"Status\" id=\"Status\"><br><br>\n           <textarea name=\"Description\" id=\"Description\" cols=\"52\" rows=\"5\" placeholder=\"Description\"></textarea><br><br>\n           <input type=\"submit\" value=\"Save\" id=\"Save\">\n         </form>\n     </div>\n   </div>\n"
 
 /***/ }),
 
@@ -463,12 +463,8 @@ var ExperienceEditComponent = /** @class */ (function () {
         var Locations = event.target.querySelector('#Locations').value;
         var FromDate = event.target.querySelector('#dateOfBirth1').value;
         var ToDate = event.target.querySelector('#dateOfBirth2').value;
-        console.log(Company);
-        console.log(Role);
-        console.log(Locations);
-        console.log(FromDate);
-        console.log(ToDate);
-        this.user.EditExperience(this.username, Role, Company, Locations, FromDate, ToDate).subscribe(function (data) {
+        var Description = event.target.querySelector('#Description').value;
+        this.user.EditExperience(this.username, Role, Company, Locations, FromDate, ToDate, Description).subscribe(function (data) {
             if (data != null) {
                 alert('Experience Added');
                 _this.router.navigate(['/profile', _this.username]);
@@ -627,14 +623,15 @@ var ProfileService = /** @class */ (function () {
             Ten: Ten
         });
     };
-    ProfileService.prototype.EditExperience = function (username, Role, company, location, from, to) {
+    ProfileService.prototype.EditExperience = function (username, Role, company, location, from, to, Description) {
         return this.http.post('/EditExperience', {
             username: username,
             Role: Role,
             company: company,
             location: location,
             from: from,
-            to: to
+            to: to,
+            Description: Description
         });
     };
     ProfileService.prototype.EditTitle = function (username, Status, Description) {
@@ -1173,6 +1170,9 @@ var TitleEditComponent = /** @class */ (function () {
                 _this.router.navigate(['/profile', _this.username]);
             }
         });
+    };
+    TitleEditComponent.prototype.HomePage = function () {
+        return this.router.navigate(['profile', this.username]);
     };
     TitleEditComponent.ctorParameters = function () { return [
         { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] },
