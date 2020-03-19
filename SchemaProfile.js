@@ -12,7 +12,8 @@ const ProfileInfo = mongoose.Schema({
      to: String,
      Role: String,
      Location: String,
-     company: String 
+     company: String ,
+     Description:String 
     }],
     Education: {
     	Ten: Number,
