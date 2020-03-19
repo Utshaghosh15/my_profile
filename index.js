@@ -175,7 +175,7 @@ app.post('/EditEducation', async (req,res) => {
 //Add Experience
 app.post('/EditExperience', async (req,res) => {
     try{
-      const AddPost = await ProfileInfo.update({ name: req.body.username },{ $addToSet : { Experience: { Role: req.body.Role, company: req.body.company, from : req.body.from, to : req.body.to, Location: req.body.location} } });
+      const AddPost = await ProfileInfo.update({ name: req.body.username },{ $addToSet : { Experience: { Role: req.body.Role, company: req.body.company, from : req.body.from, to : req.body.to, Location: req.body.location, Description: req.body.Description} } });
        res.json(AddPost);       
   }
   catch(err){
